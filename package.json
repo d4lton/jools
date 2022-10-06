@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --node-env development --port 3000"
+    "start": "webpack-dev-server --node-env development --port 3000",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
