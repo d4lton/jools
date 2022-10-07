@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --node-env development --port 3000",
-    "build": "webpack"
+    "build": "rm -rf build && webpack",
+    "docker:build": "npm run build && docker build --no-cache -t $npm_package_name:$npm_package_version .",
+    "docker:start": "docker run --detach --rm --publish 3000:3000 --name $npm_package_name $npm_package_name:$npm_package_version",
+    "docker:stop": "docker stop $npm_package_name"
   },
   "keywords": [],
   "author": "",
